@@ -14,8 +14,8 @@ import os
 
 from dotenv import load_dotenv
 
-from database import get_connection, create_database
-from backup import create_backup, list_backups
+from backend.database import get_connection, create_database
+from backend.backup import create_backup, list_backups
 
 
 # =========================================================
