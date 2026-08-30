@@ -56,7 +56,7 @@ def create_backup():
     )
 
     # -----------------------------------------------------
-    # استخدام SQLite backup API
+    # استخدام SQLite Backup API
     # -----------------------------------------------------
 
     source = sqlite3.connect(
@@ -102,17 +102,39 @@ def list_backups():
 
 
 # =========================================================
-# حذف نسخة احتياطية
+# الحصول على نسخة احتياطية محددة
 # =========================================================
 
-def delete_backup(
+def get_backup(
     filename: str
 ):
 
-    # منع استخدام مسارات خارج مجلد backups
+    ensure_backup_directory()
+
+    # -----------------------------------------------------
+    # منع استخدام مسار خارج مجلد backups
+    # -----------------------------------------------------
+
     safe_name = Path(
         filename
     ).name
+
+    # التأكد من أن الاسم هو اسم نسخة احتياطية
+    if not safe_name.startswith(
+        "portfolio_backup_"
+    ):
+
+        raise FileNotFoundError(
+            "اسم النسخة الاحتياطية غير صالح"
+        )
+
+    if not safe_name.endswith(
+        ".db"
+    ):
+
+        raise FileNotFoundError(
+            "ملف النسخة الاحتياطية غير صالح"
+        )
 
     backup_path = (
         BACKUP_DIR / safe_name
@@ -123,6 +145,27 @@ def delete_backup(
         raise FileNotFoundError(
             "النسخة الاحتياطية غير موجودة"
         )
+
+    if not backup_path.is_file():
+
+        raise FileNotFoundError(
+            "النسخة الاحتياطية غير صالحة"
+        )
+
+    return backup_path
+
+
+# =========================================================
+# حذف نسخة احتياطية
+# =========================================================
+
+def delete_backup(
+    filename: str
+):
+
+    backup_path = get_backup(
+        filename
+    )
 
     backup_path.unlink()
 

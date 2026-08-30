@@ -15,7 +15,11 @@ import os
 from dotenv import load_dotenv
 
 from backend.database import get_connection, create_database
-from backend.backup import create_backup, list_backups
+from backend.backup import (
+    create_backup,
+    list_backups,
+    get_backup
+)
 
 
 # =========================================================
@@ -857,6 +861,49 @@ def get_backups(
             status_code=500,
             detail=
                 f"فشل قراءة النسخ الاحتياطية: {error}"
+        )
+
+
+# =========================================================
+# تحميل نسخة احتياطية
+# =========================================================
+
+@app.get("/admin/backups/{filename}/download")
+def download_backup(
+    filename: str,
+    authorization: Optional[str] =
+        Header(default=None)
+):
+
+    verify_admin_token(
+        authorization
+    )
+
+    try:
+
+        backup_path = get_backup(
+            filename
+        )
+
+        return FileResponse(
+            path=backup_path,
+            filename=backup_path.name,
+            media_type="application/octet-stream"
+        )
+
+    except FileNotFoundError as error:
+
+        raise HTTPException(
+            status_code=404,
+            detail=str(error)
+        )
+
+    except Exception as error:
+
+        raise HTTPException(
+            status_code=500,
+            detail=
+                f"فشل تحميل النسخة الاحتياطية: {error}"
         )
 
 
