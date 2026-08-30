@@ -36,6 +36,7 @@ img {
     margin: 0 auto;
 }
 
+
 /* =========================================
    Header
 ========================================= */
@@ -84,6 +85,7 @@ img {
     color: #2563eb;
 }
 
+
 /* =========================================
    Hero
 ========================================= */
@@ -94,8 +96,16 @@ img {
     align-items: center;
     padding: 90px 0;
     background:
-        radial-gradient(circle at 15% 20%, rgba(37, 99, 235, 0.12), transparent 30%),
-        linear-gradient(135deg, #f8fbff, #eef4ff);
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(37, 99, 235, 0.12),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #f8fbff,
+            #eef4ff
+        );
 }
 
 .hero-container {
@@ -167,7 +177,8 @@ img {
 .btn-primary {
     background: #2563eb;
     color: white;
-    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
+    box-shadow:
+        0 10px 25px rgba(37, 99, 235, 0.2);
 }
 
 .btn-primary:hover {
@@ -202,6 +213,7 @@ img {
     font-weight: 600;
 }
 
+
 /* =========================================
    Profile
 ========================================= */
@@ -213,20 +225,34 @@ img {
     position: relative;
 }
 
+
+/*
+   إطار الصورة طولي ومستطيل
+   حتى تظهر الصورة كاملة
+*/
+
 .profile-frame {
     width: 330px;
-    height: 330px;
+    height: 500px;
     padding: 10px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #2563eb, #60a5fa);
-    box-shadow: 0 25px 60px rgba(37, 99, 235, 0.25);
+    border-radius: 25px;
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #60a5fa
+        );
+    box-shadow:
+        0 25px 60px rgba(37, 99, 235, 0.25);
+    overflow: hidden;
 }
 
 .profile-image {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    border-radius: 50%;
+    object-position: center center;
+    border-radius: 18px;
     border: 7px solid white;
 }
 
@@ -236,7 +262,8 @@ img {
     padding: 14px 24px;
     background: white;
     border-radius: 14px;
-    box-shadow: 0 12px 35px rgba(15, 23, 42, 0.15);
+    box-shadow:
+        0 12px 35px rgba(15, 23, 42, 0.15);
     text-align: center;
 }
 
@@ -250,6 +277,7 @@ img {
     color: #6b7280;
     font-size: 13px;
 }
+
 
 /* =========================================
    Sections
@@ -291,6 +319,7 @@ img {
     color: #94a3b8;
 }
 
+
 /* =========================================
    Services
 ========================================= */
@@ -313,7 +342,8 @@ img {
 .service-card:hover {
     transform: translateY(-8px);
     border-color: #bfdbfe;
-    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.09);
+    box-shadow:
+        0 20px 40px rgba(15, 23, 42, 0.09);
 }
 
 .service-icon {
@@ -337,6 +367,7 @@ img {
     color: #6b7280;
     font-size: 14px;
 }
+
 
 /* =========================================
    Projects
@@ -367,12 +398,20 @@ img {
     align-items: center;
     justify-content: center;
     background:
-        linear-gradient(135deg, #2563eb, #0f172a);
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #0f172a
+        );
 }
 
 .project-jiwar {
     background:
-        radial-gradient(circle at center, #2563eb, #0f172a 70%);
+        radial-gradient(
+            circle at center,
+            #2563eb,
+            #0f172a 70%
+        );
 }
 
 .project-image span {
@@ -418,6 +457,7 @@ img {
     font-size: 12px;
 }
 
+
 /* =========================================
    Skills
 ========================================= */
@@ -439,7 +479,8 @@ img {
 .skill:hover {
     transform: translateY(-5px);
     border-color: #93c5fd;
-    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+    box-shadow:
+        0 12px 30px rgba(15, 23, 42, 0.08);
 }
 
 .skill strong {
@@ -453,6 +494,7 @@ img {
     color: #6b7280;
     font-size: 13px;
 }
+
 
 /* =========================================
    About
@@ -490,7 +532,8 @@ img {
     background: #0f172a;
     color: white;
     text-align: center;
-    box-shadow: 0 25px 50px rgba(15, 23, 42, 0.18);
+    box-shadow:
+        0 25px 50px rgba(15, 23, 42, 0.18);
 }
 
 .about-box h3 {
@@ -502,6 +545,7 @@ img {
     color: #aab6c9;
 }
 
+
 /* =========================================
    Contact
 ========================================= */
@@ -509,7 +553,11 @@ img {
 .contact-section {
     padding: 100px 0;
     background:
-        linear-gradient(135deg, #0f172a, #172554);
+        linear-gradient(
+            135deg,
+            #0f172a,
+            #172554
+        );
     color: white;
 }
 
@@ -534,6 +582,7 @@ img {
     margin-bottom: 35px;
 }
 
+
 /* =========================================
    Form
 ========================================= */
@@ -544,7 +593,8 @@ img {
     border-radius: 20px;
     color: #172033;
     text-align: right;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.2);
 }
 
 .form-row {
@@ -584,7 +634,8 @@ img {
 .form-group textarea:focus {
     border-color: #2563eb;
     background: white;
-    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+    box-shadow:
+        0 0 0 4px rgba(37, 99, 235, 0.1);
 }
 
 .form-group textarea {
@@ -603,6 +654,7 @@ img {
     text-align: center;
     font-weight: 700;
 }
+
 
 /* =========================================
    Contact Buttons
@@ -636,6 +688,7 @@ img {
     color: #0f172a;
 }
 
+
 /* =========================================
    Footer
 ========================================= */
@@ -651,14 +704,17 @@ img {
     font-size: 14px;
 }
 
+
 /* =========================================
    Responsive - Tablet
 ========================================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 600px) {
 
-    .navbar {
-        gap: 14px;
+    .profile-image {
+        object-fit: contain !important;
+        object-position: center center !important;
+        border-radius: 18px !important;
     }
 
     .services-grid {
@@ -692,6 +748,7 @@ img {
     }
 }
 
+
 /* =========================================
    Responsive - Mobile
 ========================================= */
@@ -723,8 +780,19 @@ img {
     }
 
     .profile-frame {
-        width: 250px;
-        height: 250px;
+        width: 250px !important;
+        height: 480px !important;
+        padding: 8px !important;
+        border-radius: 22px !important;
+        overflow: hidden !important;
+    }
+
+    .profile-image {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain !important;
+        object-position: center center !important;
+        border-radius: 18px !important;
     }
 
     .hero h1 {
@@ -775,6 +843,7 @@ img {
     }
 }
 
+
 /* =========================================
    Small Mobile
 ========================================= */
@@ -790,8 +859,19 @@ img {
     }
 
     .profile-frame {
-        width: 210px;
-        height: 210px;
+        width: 210px !important;
+        height: 420px !important;
+        padding: 7px !important;
+        border-radius: 20px !important;
+        overflow: hidden !important;
+    }
+
+    .profile-image {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain !important;
+        object-position: center center !important;
+        border-radius: 18px !important;
     }
 
     .btn {
@@ -800,5 +880,58 @@ img {
 
     .hero-buttons {
         flex-direction: column;
+    }
+}
+
+
+/* =========================================
+   Final Profile Fix
+   Same shape on desktop and mobile
+========================================= */
+
+.profile-frame {
+    border-radius: 25px !important;
+    overflow: hidden !important;
+}
+
+.profile-image {
+    object-fit: contain !important;
+    object-position: center center !important;
+    border-radius: 18px !important;
+}
+
+@media (max-width: 700px) {
+
+    .profile-frame {
+        width: 250px !important;
+        height: 480px !important;
+        border-radius: 22px !important;
+        overflow: hidden !important;
+    }
+
+    .profile-image {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain !important;
+        object-position: center center !important;
+        border-radius: 18px !important;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .profile-frame {
+        width: 210px !important;
+        height: 420px !important;
+        border-radius: 20px !important;
+        overflow: hidden !important;
+    }
+
+    .profile-image {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain !important;
+        object-position: center center !important;
+        border-radius: 18px !important;
     }
 }
